@@ -111,28 +111,28 @@ function HomeHeader() {
       {/* =========================
           SP
       ========================= */}
-      <div className="pointer-events-none block md:hidden">
+      <div className="block md:hidden">
         {/* top bar */}
-        <div className="pointer-events-auto absolute left-0 top-0 w-full px-5 pt-4">
+        <div className="pointer-events-none absolute left-0 top-0 w-full px-5 pt-4">
           <div className="flex items-start justify-between">
-     {/* brand */}
-<Link
-  to="/"
-  onClick={() => setOpen(false)}
-  className="group inline-flex flex-col items-start text-elno-text translate-y-[1px]"
-  aria-label="ELNO home"
->
-<span className="pt-[3px] text-[15px] font-medium leading-none tracking-[0.22em]">
-  ELNO
-</span>
-  <span className="mt-3 h-px w-7 bg-elno-text/18" />
-</Link>
+            {/* brand */}
+            <Link
+              to="/"
+              onClick={() => setOpen(false)}
+              className="pointer-events-auto group inline-flex translate-y-[1px] flex-col items-start text-elno-text"
+              aria-label="ELNO home"
+            >
+              <span className="pt-[3px] text-[15px] font-medium leading-none tracking-[0.22em]">
+                ELNO
+              </span>
+              <span className="mt-3 h-px w-7 bg-elno-text/18" />
+            </Link>
 
             {/* menu button */}
             <button
               type="button"
               onClick={() => setOpen((prev) => !prev)}
-              className="flex min-h-[44px] min-w-[44px] items-center justify-center text-elno-text"
+              className="pointer-events-auto flex min-h-[44px] min-w-[44px] items-center justify-center text-elno-text"
               aria-label={open ? "メニューを閉じる" : "メニューを開く"}
               aria-expanded={open}
               aria-controls="home-mobile-menu"
@@ -165,9 +165,9 @@ function HomeHeader() {
         <div
           id="home-mobile-menu"
           className={[
-            "pointer-events-auto absolute left-4 right-4 top-[78px] overflow-hidden rounded-[22px] border border-black/8 bg-[rgba(245,245,242,0.88)] shadow-[0_18px_60px_rgba(0,0,0,0.08)] backdrop-blur-[14px] transition-all duration-400",
+            "absolute left-4 right-4 top-[78px] overflow-hidden rounded-[22px] border border-black/8 bg-[rgba(245,245,242,0.88)] shadow-[0_18px_60px_rgba(0,0,0,0.08)] backdrop-blur-[14px] transition-all duration-400",
             open
-              ? "translate-y-0 opacity-100"
+              ? "pointer-events-auto translate-y-0 opacity-100"
               : "pointer-events-none -translate-y-2 opacity-0",
           ].join(" ")}
         >

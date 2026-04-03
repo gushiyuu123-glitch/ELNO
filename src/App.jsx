@@ -7,12 +7,16 @@ import Black from "./pages/Black";
 import Gray from "./pages/Gray";
 import White from "./pages/White";
 import Statement from "./pages/Statement";
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* HOMEは完全隔離 */}
+        <Route path="/" element={<Home />} />
+
+        {/* 下層ページだけLayoutに入れる */}
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/price" element={<Price />} />
           <Route path="/black" element={<Black />} />

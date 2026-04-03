@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import HomeHeader from "../components/HomeHeader";
 
 const blackImage = "/black1.png";
@@ -162,11 +163,32 @@ function HeroColumn({
   itemAlt,
   overlayClass,
   align,
+  isVisible,
 }) {
   return (
     <Link
       to={to}
-      className="group relative overflow-hidden rounded-[18px] h-[24svh] min-h-[180px] max-h-[240px] md:h-full md:min-h-[540px] md:max-h-none md:rounded-none"
+      className={[
+        "group relative overflow-hidden rounded-[18px]",
+        "h-[24svh] min-h-[180px] max-h-[240px]",
+        "md:h-full md:min-h-[540px] md:max-h-none md:rounded-none",
+        "transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform",
+        isVisible
+          ? "translate-x-0 translate-y-0 scale-100 opacity-100"
+          : align === "left"
+            ? "-translate-x-5 translate-y-0 scale-[0.985] opacity-0"
+            : align === "right"
+              ? "translate-x-5 translate-y-0 scale-[0.985] opacity-0"
+              : "translate-x-0 translate-y-5 scale-[0.985] opacity-0",
+      ].join(" ")}
+      style={{
+        transitionDelay:
+          align === "left"
+            ? "0ms"
+            : align === "right"
+              ? "120ms"
+              : "240ms",
+      }}
       aria-label={`${label}の商品ページを見る`}
     >
       {/* PC model */}
@@ -202,6 +224,16 @@ function HeroColumn({
 }
 
 function Home() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setIsVisible(true);
+    }, 80);
+
+    return () => window.clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <HomeHeader />
@@ -236,15 +268,25 @@ function Home() {
         <section className="relative z-[1] flex flex-1 items-start justify-center px-4 pb-5 pt-2 md:items-center md:px-6 md:pb-6 xl:px-7 xl:pb-7">
           {/* SP */}
           <div className="grid w-full grid-cols-1 gap-3 md:hidden">
-            {heroItems.map((item) => (
-              <HeroColumn key={item.label} {...item} />
+            {heroItems.map((item, index) => (
+              <HeroColumn
+                key={item.label}
+                {...item}
+                index={index}
+                isVisible={isVisible}
+              />
             ))}
           </div>
 
           {/* PC */}
           <div className="hidden w-full max-w-[1520px] grid-cols-3 gap-3 md:grid md:h-[calc(100svh-92px-24px)] md:gap-4 xl:grid-cols-[0.97fr_1.06fr_0.97fr] xl:gap-5">
-            {heroItems.map((item) => (
-              <HeroColumn key={item.label} {...item} />
+            {heroItems.map((item, index) => (
+              <HeroColumn
+                key={item.label}
+                {...item}
+                index={index}
+                isVisible={isVisible}
+              />
             ))}
           </div>
         </section>

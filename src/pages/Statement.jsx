@@ -27,7 +27,7 @@ function Statement() {
         <div className="mx-auto mt-12 max-w-[700px] md:mt-16">
           <div className="space-y-6 text-[13px] leading-[2] text-elno-text-soft md:space-y-7 md:text-[15px] md:leading-[2.2]">
             <p>
-              ELNOが大切にしているのは、
+              ELNOが大切にしているのは、<br></br>
               強く飾ることではなく、
               <br className="md:hidden" />
               静かな印象の中で
