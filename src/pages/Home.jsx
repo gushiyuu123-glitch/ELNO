@@ -25,8 +25,6 @@ const heroItems = [
     itemAlt: "Black outerwear product",
     overlayClass: "group-hover:bg-black/5",
     align: "left",
-    entranceClass:
-      "animate-[elnoLeftIn_0.9s_ease_forwards] opacity-0 [animation-delay:120ms]",
   },
   {
     to: "/gray",
@@ -39,8 +37,6 @@ const heroItems = [
     itemAlt: "Gray outerwear product",
     overlayClass: "group-hover:bg-black/5",
     align: "center",
-    entranceClass:
-      "animate-[elnoCenterIn_0.9s_ease_forwards] opacity-0 [animation-delay:260ms]",
   },
   {
     to: "/white",
@@ -49,12 +45,10 @@ const heroItems = [
     pcModelImage: whiteImage,
     spModelImage: whiteImageSp,
     pcItemImage: whiteItemImage,
-    modelAlt: "White outerwear model",
+    modelAlt: "White outerwear product model",
     itemAlt: "White outerwear product",
     overlayClass: "group-hover:bg-black/10",
     align: "right",
-    entranceClass:
-      "animate-[elnoRightIn_0.9s_ease_forwards] opacity-0 [animation-delay:400ms]",
   },
 ];
 
@@ -62,20 +56,22 @@ function HeroText({ label, subcopy, align }) {
   if (align === "left") {
     return (
       <>
+        {/* PC */}
         <div className="absolute bottom-4 left-4 z-10 hidden md:block md:bottom-6 md:left-8 xl:bottom-7 xl:left-9">
-          <p className="absolute left-0 top-0 translate-x-[-20px] translate-y-8 rotate-[-10deg] text-[36px] font-semibold tracking-[0.22em] text-black/20 opacity-0 transition-all duration-700 group-hover:translate-x-[6px] group-hover:translate-y-[6px] group-hover:opacity-100 md:text-[58px] xl:text-[64px]">
+          <p className="absolute left-0 top-0 translate-x-[-20px] translate-y-8 rotate-[-10deg] text-[36px] font-semibold tracking-[0.22em] text-black/20 transition-all duration-700 group-hover:translate-x-[6px] group-hover:translate-y-[6px] md:text-[58px] xl:text-[64px]">
             {label}
           </p>
 
-          <p className="relative translate-x-[-14px] translate-y-6 rotate-[-8deg] text-[36px] font-semibold tracking-[0.22em] text-black opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:rotate-[-3deg] group-hover:opacity-100 md:text-[58px] xl:text-[64px]">
+          <p className="relative translate-x-[-14px] translate-y-6 rotate-[-8deg] text-[36px] font-semibold tracking-[0.22em] text-black transition-all duration-500 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:rotate-[-3deg] md:text-[58px] xl:text-[64px]">
             {label}
           </p>
 
-          <p className="mt-3 translate-x-[-2px] text-[10px] tracking-[0.18em] text-neutral-700/70 opacity-0 transition-all duration-500 delay-75 group-hover:translate-x-0 group-hover:opacity-100 md:text-[11px]">
+          <p className="mt-3 translate-x-[-2px] text-[10px] tracking-[0.18em] text-neutral-700/70 transition-all duration-500 delay-75 group-hover:translate-x-0 md:text-[11px]">
             {subcopy}
           </p>
         </div>
 
+        {/* SP */}
         <div className="absolute bottom-5 left-4 z-10 md:hidden">
           <p className="text-[24px] font-semibold tracking-[0.18em] text-black/92">
             {label}
@@ -91,20 +87,22 @@ function HeroText({ label, subcopy, align }) {
   if (align === "center") {
     return (
       <>
+        {/* PC */}
         <div className="absolute bottom-4 left-1/2 z-10 hidden -translate-x-1/2 md:block md:bottom-6 xl:bottom-7">
-          <p className="absolute left-1/2 top-0 -translate-x-1/2 translate-y-8 text-[36px] font-semibold tracking-[0.22em] text-gray-500/25 opacity-0 transition-all duration-700 group-hover:translate-y-[6px] group-hover:opacity-100 md:text-[58px] xl:text-[64px]">
+          <p className="absolute left-1/2 top-0 -translate-x-1/2 translate-y-8 text-[36px] font-semibold tracking-[0.22em] text-gray-500/25 transition-all duration-700 group-hover:translate-y-[6px] md:text-[58px] xl:text-[64px]">
             {label}
           </p>
 
-          <p className="relative translate-y-6 text-[36px] font-semibold tracking-[0.22em] text-gray-500 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 md:text-[58px] xl:text-[64px]">
+          <p className="relative translate-y-6 text-[36px] font-semibold tracking-[0.22em] text-gray-500 transition-all duration-500 group-hover:translate-y-0 md:text-[58px] xl:text-[64px]">
             {label}
           </p>
 
-          <p className="mt-3 text-center text-[10px] tracking-[0.18em] text-neutral-700/70 opacity-0 transition-all duration-500 delay-75 group-hover:opacity-100 md:text-[11px]">
+          <p className="mt-3 text-center text-[10px] tracking-[0.18em] text-neutral-700/70 transition-all duration-500 delay-75 md:text-[11px]">
             {subcopy}
           </p>
         </div>
 
+        {/* SP */}
         <div className="absolute bottom-5 left-1/2 z-10 -translate-x-1/2 text-center md:hidden">
           <p
             className="text-[24px] font-semibold tracking-[0.18em] text-gray-600"
@@ -125,20 +123,22 @@ function HeroText({ label, subcopy, align }) {
 
   return (
     <>
+      {/* PC */}
       <div className="absolute bottom-4 right-4 z-10 hidden md:block md:bottom-6 md:right-8 xl:bottom-7 xl:right-9">
-        <p className="absolute right-0 top-0 translate-x-[20px] translate-y-8 rotate-[10deg] text-[36px] font-semibold tracking-[0.22em] text-white/25 opacity-0 transition-all duration-700 group-hover:translate-x-[6px] group-hover:translate-y-[6px] group-hover:opacity-100 md:text-[58px] xl:text-[64px]">
+        <p className="absolute right-0 top-0 translate-x-[20px] translate-y-8 rotate-[10deg] text-[36px] font-semibold tracking-[0.22em] text-white/25 transition-all duration-700 group-hover:translate-x-[6px] group-hover:translate-y-[6px] md:text-[58px] xl:text-[64px]">
           {label}
         </p>
 
-        <p className="relative translate-x-[14px] translate-y-6 rotate-[8deg] text-[36px] font-semibold tracking-[0.22em] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)] opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:rotate-[3deg] group-hover:opacity-100 md:text-[58px] xl:text-[64px]">
+        <p className="relative translate-x-[14px] translate-y-6 rotate-[8deg] text-[36px] font-semibold tracking-[0.22em] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)] transition-all duration-500 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:rotate-[3deg] md:text-[58px] xl:text-[64px]">
           {label}
         </p>
 
-        <p className="mt-3 text-right text-[10px] tracking-[0.18em] text-white/80 opacity-0 transition-all duration-500 delay-75 group-hover:opacity-100 md:text-[11px]">
+        <p className="mt-3 text-right text-[10px] tracking-[0.18em] text-white/80 transition-all duration-500 delay-75 md:text-[11px]">
           {subcopy}
         </p>
       </div>
 
+      {/* SP */}
       <div className="absolute bottom-5 right-4 z-10 text-right md:hidden">
         <p className="text-[24px] font-semibold tracking-[0.18em] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.24)]">
           {label}
@@ -162,36 +162,38 @@ function HeroColumn({
   itemAlt,
   overlayClass,
   align,
-  entranceClass,
 }) {
   return (
     <Link
       to={to}
-      className={`group relative overflow-hidden rounded-[18px] h-[24svh] min-h-[180px] max-h-[240px] md:h-full md:min-h-0 md:max-h-none md:rounded-none ${entranceClass}`}
+      className="group relative overflow-hidden rounded-[18px] h-[24svh] min-h-[180px] max-h-[240px] md:h-full md:min-h-[540px] md:max-h-none md:rounded-none"
       aria-label={`${label}の商品ページを見る`}
     >
+      {/* PC model */}
       <img
         src={pcModelImage}
         alt={modelAlt}
         className="absolute inset-0 hidden h-full w-full object-cover transition-all duration-500 group-hover:scale-[1.015] group-hover:opacity-0 md:block"
       />
 
+      {/* PC item */}
       <img
         src={pcItemImage}
         alt={itemAlt}
         className="absolute inset-0 hidden h-full w-full object-cover opacity-0 transition-all duration-500 group-hover:scale-[1.02] group-hover:opacity-100 md:block"
       />
 
+      {/* SP model */}
       <img
         src={spModelImage}
         alt={modelAlt}
         className="absolute inset-0 h-full w-full object-cover md:hidden"
       />
 
+      {/* overlays */}
       <div
         className={`absolute inset-0 hidden bg-black/0 transition-colors duration-500 md:block ${overlayClass}`}
       />
-
       <div className="absolute inset-0 bg-gradient-to-t from-black/18 via-black/0 to-white/0 md:hidden" />
 
       <HeroText label={label} subcopy={subcopy} align={align} />
@@ -204,13 +206,12 @@ function Home() {
     <>
       <HomeHeader />
 
-      <section className="relative flex min-h-[100svh] flex-col overflow-hidden md:h-full md:min-h-0">
+      <section className="relative flex min-h-[100svh] flex-col overflow-hidden md:min-h-[100svh]">
         <div className="h-[92px] md:h-[92px] xl:h-[88px]" />
 
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-        >
+        {/* atmosphere */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          {/* PC */}
           <div className="hidden md:block">
             <div className="absolute inset-x-[18%] top-[14%] h-[52%] rounded-full bg-white/40 blur-[90px]" />
             <div className="absolute left-[-8%] top-[18%] h-[42%] w-[26%] rounded-full bg-white/20 blur-[100px]" />
@@ -222,6 +223,7 @@ function Home() {
             <div className="absolute left-[8%] right-[8%] top-[62%] h-px bg-black/[0.02]" />
           </div>
 
+          {/* SP */}
           <div className="md:hidden">
             <div className="absolute inset-x-[10%] top-[8%] h-[28%] rounded-full bg-white/45 blur-[64px]" />
             <div className="absolute left-[-20%] top-[18%] h-[22%] w-[56%] rounded-full bg-white/22 blur-[70px]" />
@@ -232,13 +234,15 @@ function Home() {
         </div>
 
         <section className="relative z-[1] flex flex-1 items-start justify-center px-4 pb-5 pt-2 md:items-center md:px-6 md:pb-6 xl:px-7 xl:pb-7">
+          {/* SP */}
           <div className="grid w-full grid-cols-1 gap-3 md:hidden">
             {heroItems.map((item) => (
               <HeroColumn key={item.label} {...item} />
             ))}
           </div>
 
-          <div className="hidden h-full w-full max-w-[1520px] grid-cols-3 gap-3 md:grid md:gap-4 xl:grid-cols-[0.97fr_1.06fr_0.97fr] xl:gap-5">
+          {/* PC */}
+          <div className="hidden w-full max-w-[1520px] grid-cols-3 gap-3 md:grid md:h-[calc(100svh-92px-24px)] md:gap-4 xl:grid-cols-[0.97fr_1.06fr_0.97fr] xl:gap-5">
             {heroItems.map((item) => (
               <HeroColumn key={item.label} {...item} />
             ))}
