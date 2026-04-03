@@ -20,8 +20,8 @@ function HomeHeader() {
 
   const mobileNavClass = ({ isActive }) =>
     [
-      "flex items-center justify-between border-b border-black/6 py-4 transition-opacity duration-300",
-      isActive ? "opacity-100" : "opacity-72",
+      "group flex items-center justify-between border-b border-black/[0.075] py-[14px] transition-all duration-300",
+      isActive ? "opacity-100" : "opacity-80 hover:opacity-100",
     ].join(" ");
 
   return (
@@ -94,7 +94,6 @@ function HomeHeader() {
             ))}
           </div>
 
-          {/* SUB BLOCK */}
           <div className="mt-9 flex flex-col items-end pt-6 animate-elno-subnav-in">
             <span className="mb-5 h-px w-8 bg-elno-text/10" />
 
@@ -119,13 +118,13 @@ function HomeHeader() {
             <Link
               to="/"
               onClick={() => setOpen(false)}
-              className="pointer-events-auto group inline-flex translate-y-[1px] flex-col items-start text-elno-text"
+              className="pointer-events-auto inline-flex translate-y-[1px] flex-col items-start text-elno-text"
               aria-label="ELNO home"
             >
-              <span className="pt-[3px] text-[15px] font-medium leading-none tracking-[0.22em]">
+              <span className="pt-[3px] text-[14px] font-medium leading-none tracking-[0.24em]">
                 ELNO
               </span>
-              <span className="mt-3 h-px w-7 bg-elno-text/18" />
+              <span className="mt-[10px] h-px w-6 bg-elno-text/20" />
             </Link>
 
             {/* menu button */}
@@ -137,23 +136,23 @@ function HomeHeader() {
               aria-expanded={open}
               aria-controls="home-mobile-menu"
             >
-              <span className="relative block h-4 w-7">
+              <span className="relative block h-[14px] w-6">
                 <span
                   className={[
-                    "absolute left-0 top-0 h-px w-7 bg-elno-text transition-all duration-300",
-                    open ? "translate-y-[7px] rotate-45" : "",
+                    "absolute left-0 top-0 h-px w-6 bg-elno-text transition-all duration-300",
+                    open ? "translate-y-[6px] rotate-45" : "",
                   ].join(" ")}
                 />
                 <span
                   className={[
-                    "absolute left-0 top-[7px] h-px w-7 bg-elno-text transition-all duration-300",
+                    "absolute left-0 top-[6px] h-px w-6 bg-elno-text transition-all duration-300",
                     open ? "opacity-0" : "opacity-100",
                   ].join(" ")}
                 />
                 <span
                   className={[
-                    "absolute left-0 top-[14px] h-px w-7 bg-elno-text transition-all duration-300",
-                    open ? "-translate-y-[7px] -rotate-45" : "",
+                    "absolute left-0 top-[12px] h-px w-6 bg-elno-text transition-all duration-300",
+                    open ? "-translate-y-[6px] -rotate-45" : "",
                   ].join(" ")}
                 />
               </span>
@@ -161,22 +160,44 @@ function HomeHeader() {
           </div>
         </div>
 
+        {/* veil */}
+        <div
+          className={[
+            "absolute inset-0 bg-black/[0.14] transition-opacity duration-300",
+            open
+              ? "pointer-events-auto opacity-100"
+              : "pointer-events-none opacity-0",
+          ].join(" ")}
+          onClick={() => setOpen(false)}
+          aria-hidden="true"
+        />
+
         {/* panel */}
         <div
           id="home-mobile-menu"
           className={[
-            "absolute left-4 right-4 top-[78px] overflow-hidden rounded-[22px] border border-black/8 bg-[rgba(245,245,242,0.88)] shadow-[0_18px_60px_rgba(0,0,0,0.08)] backdrop-blur-[14px] transition-all duration-400",
+            "absolute left-5 right-5 top-[72px] overflow-hidden",
+            "border border-black/[0.10] bg-[rgba(243,243,239,0.975)]",
+            "shadow-[0_18px_42px_rgba(0,0,0,0.055)]",
+            "transition-all duration-300",
             open
               ? "pointer-events-auto translate-y-0 opacity-100"
-              : "pointer-events-none -translate-y-2 opacity-0",
+              : "pointer-events-none -translate-y-[8px] opacity-0",
           ].join(" ")}
         >
-          <div className="px-5 pb-5 pt-5">
-            <div className="mb-3 flex items-center justify-between">
-              <span className="text-[10px] tracking-[0.2em] text-elno-text/40">
-                MENU
-              </span>
-              <span className="h-px w-8 bg-black/10" />
+          {/* fine lines */}
+          <div className="absolute inset-x-0 top-0 h-px bg-white/58" />
+          <div className="absolute inset-y-0 left-0 w-px bg-black/[0.035]" />
+          <div className="absolute inset-y-0 right-0 w-px bg-black/[0.035]" />
+          <div className="absolute inset-x-[7%] top-[52px] h-px bg-black/[0.045]" />
+
+          {/* quiet atmosphere */}
+          <div className="pointer-events-none absolute -left-[18%] top-[10%] h-[92px] w-[92px] rounded-full bg-white/[0.24] blur-[30px]" />
+          <div className="pointer-events-none absolute right-[-20%] bottom-[8%] h-[110px] w-[110px] rounded-full bg-black/[0.03] blur-[44px]" />
+
+          <div className="px-5 pb-5 pt-4">
+            <div className="mb-3 flex items-center justify-end">
+              <span className="h-px w-7 bg-black/[0.10]" />
             </div>
 
             <nav aria-label="Mobile primary navigation">
@@ -189,11 +210,34 @@ function HomeHeader() {
                 >
                   {({ isActive }) => (
                     <>
-                      <span className="text-[10px] tracking-[0.18em] text-elno-text/38">
+                      <span
+                        className={[
+                          "text-[9px] tracking-[0.2em] transition-all duration-300",
+                          isActive ? "text-elno-text/42" : "text-elno-text/26",
+                        ].join(" ")}
+                      >
                         {item.no}
                       </span>
-                      <span className="text-[13px] tracking-[0.16em] text-elno-text">
-                        {item.label}
+
+                      <span className="flex items-center gap-[10px]">
+                        <span
+                          className={[
+                            "h-px transition-all duration-300",
+                            isActive
+                              ? "w-5 bg-black/24"
+                              : "w-0 bg-black/0 group-hover:w-4 group-hover:bg-black/16",
+                          ].join(" ")}
+                        />
+                        <span
+                          className={[
+                            "text-[12px] tracking-[0.20em] transition-all duration-300",
+                            isActive
+                              ? "text-elno-text"
+                              : "text-elno-text/78 group-hover:text-elno-text/92",
+                          ].join(" ")}
+                        >
+                          {item.label}
+                        </span>
                       </span>
                     </>
                   )}
@@ -205,9 +249,9 @@ function HomeHeader() {
               <NavLink
                 to="/statement"
                 onClick={() => setOpen(false)}
-                className="inline-flex items-center gap-3 text-[11px] tracking-[0.18em] text-elno-text/58 transition-opacity duration-300"
+                className="inline-flex items-center gap-3 text-[10px] tracking-[0.22em] text-elno-text/48 transition-all duration-300 hover:text-elno-text/72"
               >
-                <span className="h-px w-6 bg-black/12" />
+                <span className="h-px w-5 bg-black/[0.12]" />
                 <span>STATEMENT</span>
               </NavLink>
             </div>

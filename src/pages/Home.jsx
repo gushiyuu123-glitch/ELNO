@@ -26,6 +26,7 @@ const heroItems = [
     itemAlt: "Black outerwear product",
     overlayClass: "group-hover:bg-black/5",
     align: "left",
+    spHeightClass: "h-[22.8svh] min-h-[168px] max-h-[220px]",
   },
   {
     to: "/gray",
@@ -38,6 +39,7 @@ const heroItems = [
     itemAlt: "Gray outerwear product",
     overlayClass: "group-hover:bg-black/5",
     align: "center",
+    spHeightClass: "h-[23.6svh] min-h-[176px] max-h-[230px]",
   },
   {
     to: "/white",
@@ -50,6 +52,7 @@ const heroItems = [
     itemAlt: "White outerwear product",
     overlayClass: "group-hover:bg-black/10",
     align: "right",
+    spHeightClass: "h-[22.9svh] min-h-[170px] max-h-[224px]",
   },
 ];
 
@@ -73,11 +76,11 @@ function HeroText({ label, subcopy, align }) {
         </div>
 
         {/* SP */}
-        <div className="absolute bottom-5 left-4 z-10 md:hidden">
-          <p className="text-[24px] font-semibold tracking-[0.18em] text-black/92">
+        <div className="absolute bottom-[18px] left-[14px] z-10 md:hidden">
+          <p className="text-[21px] font-medium tracking-[0.21em] text-black/92">
             {label}
           </p>
-          <p className="mt-1 text-[9px] tracking-[0.16em] text-neutral-700/72">
+          <p className="mt-[5px] text-[8px] tracking-[0.24em] text-black/54">
             {subcopy}
           </p>
         </div>
@@ -104,17 +107,11 @@ function HeroText({ label, subcopy, align }) {
         </div>
 
         {/* SP */}
-        <div className="absolute bottom-5 left-1/2 z-10 -translate-x-1/2 text-center md:hidden">
-          <p
-            className="text-[24px] font-semibold tracking-[0.18em] text-gray-600"
-            style={{ WebkitTextStroke: "0.20px rgba(255,255,255,0.60)" }}
-          >
+        <div className="absolute bottom-[20px] left-1/2 z-10 -translate-x-1/2 text-center md:hidden">
+          <p className="translate-x-[1px] text-[21px] font-medium tracking-[0.19em] text-[#666666]">
             {label}
           </p>
-          <p
-            className="mt-1 text-[9px] tracking-[0.16em] text-neutral-700/72"
-            style={{ WebkitTextStroke: "0.20px rgba(255,255,255,0.72)" }}
-          >
+          <p className="mt-[5px] text-[8px] tracking-[0.23em] text-black/48">
             {subcopy}
           </p>
         </div>
@@ -140,11 +137,11 @@ function HeroText({ label, subcopy, align }) {
       </div>
 
       {/* SP */}
-      <div className="absolute bottom-5 right-4 z-10 text-right md:hidden">
-        <p className="text-[24px] font-semibold tracking-[0.18em] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.24)]">
+      <div className="absolute bottom-[18px] right-[14px] z-10 text-right md:hidden">
+        <p className="text-[21px] font-medium tracking-[0.21em] text-white">
           {label}
         </p>
-        <p className="mt-1 text-[9px] tracking-[0.16em] text-white/78">
+        <p className="mt-[5px] text-[8px] tracking-[0.23em] text-white/68">
           {subcopy}
         </p>
       </div>
@@ -164,14 +161,16 @@ function HeroColumn({
   overlayClass,
   align,
   isVisible,
+  spHeightClass,
 }) {
   return (
     <Link
       to={to}
       className={[
-        "group relative overflow-hidden rounded-[18px]",
-        "h-[24svh] min-h-[180px] max-h-[240px]",
-        "md:h-full md:min-h-[540px] md:max-h-none md:rounded-none",
+        "group relative overflow-hidden rounded-[6px]",
+        spHeightClass,
+        "border border-black/[0.075]",
+        "md:h-full md:min-h-[540px] md:max-h-none md:rounded-none md:border-0",
         "transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform",
         isVisible
           ? "translate-x-0 translate-y-0 scale-100 opacity-100"
@@ -216,7 +215,11 @@ function HeroColumn({
       <div
         className={`absolute inset-0 hidden bg-black/0 transition-colors duration-500 md:block ${overlayClass}`}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/18 via-black/0 to-white/0 md:hidden" />
+      <div className="absolute inset-0 bg-black/[0.11] md:hidden" />
+      <div className="absolute inset-x-0 bottom-0 h-[46%] bg-gradient-to-t from-black/[0.28] via-black/[0.10] to-transparent md:hidden" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/[0.04] via-transparent to-transparent md:hidden" />
+      <div className="absolute inset-y-0 left-0 w-px bg-white/[0.05] md:hidden" />
+      <div className="absolute inset-y-0 right-0 w-px bg-black/[0.10] md:hidden" />
 
       <HeroText label={label} subcopy={subcopy} align={align} />
     </Link>
@@ -257,22 +260,21 @@ function Home() {
 
           {/* SP */}
           <div className="md:hidden">
-            <div className="absolute inset-x-[10%] top-[8%] h-[28%] rounded-full bg-white/45 blur-[64px]" />
-            <div className="absolute left-[-20%] top-[18%] h-[22%] w-[56%] rounded-full bg-white/22 blur-[70px]" />
-            <div className="absolute right-[-24%] bottom-[10%] h-[24%] w-[60%] rounded-full bg-black/[0.03] blur-[88px]" />
-            <div className="absolute left-[7%] right-[7%] top-[34%] h-px bg-black/[0.024]" />
-            <div className="absolute left-[7%] right-[7%] bottom-[22%] h-px bg-black/[0.02]" />
+            <div className="absolute inset-x-[18%] top-[8%] h-[16%] rounded-full bg-white/[0.16] blur-[28px]" />
+            <div className="absolute left-[-24%] top-[18%] h-[14%] w-[44%] rounded-full bg-white/[0.07] blur-[34px]" />
+            <div className="absolute right-[-28%] bottom-[8%] h-[18%] w-[52%] rounded-full bg-black/[0.05] blur-[44px]" />
+            <div className="absolute left-[6%] right-[6%] top-[32%] h-px bg-black/[0.045]" />
+            <div className="absolute left-[6%] right-[6%] bottom-[20%] h-px bg-black/[0.03]" />
           </div>
         </div>
 
-        <section className="relative z-[1] flex flex-1 items-start justify-center px-4 pb-5 pt-2 md:items-center md:px-6 md:pb-6 xl:px-7 xl:pb-7">
+        <section className="relative z-[1] flex flex-1 items-start justify-center px-4 pb-5 pt-[6px] md:items-center md:px-6 md:pb-6 xl:px-7 xl:pb-7">
           {/* SP */}
-          <div className="grid w-full grid-cols-1 gap-3 md:hidden">
-            {heroItems.map((item, index) => (
+          <div className="grid w-full grid-cols-1 gap-[9px] md:hidden">
+            {heroItems.map((item) => (
               <HeroColumn
                 key={item.label}
                 {...item}
-                index={index}
                 isVisible={isVisible}
               />
             ))}
@@ -280,11 +282,10 @@ function Home() {
 
           {/* PC */}
           <div className="hidden w-full max-w-[1520px] grid-cols-3 gap-3 md:grid md:h-[calc(100svh-92px-24px)] md:gap-4 xl:grid-cols-[0.97fr_1.06fr_0.97fr] xl:gap-5">
-            {heroItems.map((item, index) => (
+            {heroItems.map((item) => (
               <HeroColumn
                 key={item.label}
                 {...item}
-                index={index}
                 isVisible={isVisible}
               />
             ))}
