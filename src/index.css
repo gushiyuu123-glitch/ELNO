@@ -1,0 +1,312 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------
+   RESET / GLOBAL
+--------------------------------------- */
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f5f2;
+  color: #171717;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+::selection {
+  background: rgba(23, 23, 23, 0.12);
+  color: #171717;
+}
+
+/* ---------------------------------------
+   PAGE TRANSITION
+--------------------------------------- */
+@keyframes pageFadeSafe {
+  from {
+    opacity: 0;
+    transform: scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-page-fade {
+  animation: pageFadeSafe 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: center center;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+
+/* ---------------------------------------
+   HERO TEXT ANIMATION
+--------------------------------------- */
+@keyframes elnoLeftIn {
+  from {
+    opacity: 0;
+    transform: translate3d(-18px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes elnoCenterIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes elnoRightIn {
+  from {
+    opacity: 0;
+    transform: translate3d(18px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* ---------------------------------------
+   HEADER NAV / SUBNAV
+--------------------------------------- */
+@keyframes elnoNavIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes elnoSubnavIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -6px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-elno-nav-in {
+  animation: elnoNavIn 0.78s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.16s;
+  will-change: opacity, transform;
+}
+
+.animate-elno-subnav-in {
+  animation: elnoSubnavIn 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.34s;
+  will-change: opacity, transform;
+}
+
+/* ---------------------------------------
+   BRAND LETTERS
+--------------------------------------- */
+@keyframes elnoLetterLeftIn {
+  from {
+    opacity: 0;
+    transform: translate3d(-8px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes elnoLetterRightIn {
+  from {
+    opacity: 0;
+    transform: translate3d(8px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes elnoBrandLineIn {
+  from {
+    opacity: 0;
+    transform: scaleX(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+.animate-elno-letter-left {
+  animation: elnoLetterLeftIn 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.06s;
+  will-change: opacity, transform;
+}
+
+.animate-elno-letter-right {
+  animation: elnoLetterRightIn 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.14s;
+  will-change: opacity, transform;
+}
+
+.animate-elno-letter-left-2 {
+  animation: elnoLetterLeftIn 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.22s;
+  will-change: opacity, transform;
+}
+
+.animate-elno-letter-right-2 {
+  animation: elnoLetterRightIn 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.3s;
+  will-change: opacity, transform;
+}
+
+.animate-elno-brand-line {
+  transform-origin: left center;
+  animation: elnoBrandLineIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.36s;
+  will-change: opacity, transform;
+}
+
+/* ---------------------------------------
+   OPTIONAL: ULTRA-SUBTLE URBAN ATMOSPHERE
+   使う場合のみ Hero 背景で使う用
+--------------------------------------- */
+.elno-urban-line-soft {
+  background: linear-gradient(
+    to bottom,
+    rgba(23, 23, 23, 0) 0%,
+    rgba(23, 23, 23, 0.025) 18%,
+    rgba(23, 23, 23, 0.025) 82%,
+    rgba(23, 23, 23, 0) 100%
+  );
+}
+
+.elno-urban-haze {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.38) 0%,
+    rgba(255, 255, 255, 0.16) 38%,
+    rgba(255, 255, 255, 0) 74%
+  );
+}
+
+/* ---------------------------------------
+   REDUCED MOTION
+--------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .animate-page-fade,
+  .animate-elno-nav-in,
+  .animate-elno-subnav-in,
+  .animate-elno-letter-left,
+  .animate-elno-letter-right,
+  .animate-elno-letter-left-2,
+  .animate-elno-letter-right-2,
+  .animate-elno-brand-line {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------------------------------------
+   TAILWIND LAYERS
+--------------------------------------- */
+@layer base {
+  body {
+    @apply bg-elno-bg text-elno-text;
+  }
+}
+
+@layer utilities {
+  .elno-container {
+    @apply mx-auto w-full max-w-page;
+  }
+
+  .elno-hero-wrap {
+    @apply mx-auto w-full max-w-hero;
+  }
+
+  .elno-logo {
+    @apply text-sm font-medium tracking-logo;
+  }
+
+  .elno-nav {
+    @apply text-[11px] tracking-nav md:text-xs;
+  }
+
+  .elno-page-title {
+    @apply text-[28px] font-medium tracking-[0.08em] md:text-[42px];
+  }
+
+  .elno-hero-text {
+    @apply text-hero-sm font-semibold tracking-hero md:text-hero-md xl:text-hero-lg;
+  }
+}
