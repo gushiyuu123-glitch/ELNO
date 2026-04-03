@@ -58,15 +58,15 @@ function HeroText({ label, subcopy, align }) {
       <>
         {/* PC */}
         <div className="absolute bottom-4 left-4 z-10 hidden md:block md:bottom-6 md:left-8 xl:bottom-7 xl:left-9">
-          <p className="absolute left-0 top-0 translate-x-[-20px] translate-y-8 rotate-[-10deg] text-[36px] font-semibold tracking-[0.22em] text-black/20 transition-all duration-700 group-hover:translate-x-[6px] group-hover:translate-y-[6px] md:text-[58px] xl:text-[64px]">
+          <p className="absolute left-0 top-0 translate-x-[-20px] translate-y-8 rotate-[-10deg] text-[36px] font-semibold tracking-[0.22em] text-black/20 opacity-0 transition-all duration-700 group-hover:translate-x-[6px] group-hover:translate-y-[6px] group-hover:opacity-100 md:text-[58px] xl:text-[64px]">
             {label}
           </p>
 
-          <p className="relative translate-x-[-14px] translate-y-6 rotate-[-8deg] text-[36px] font-semibold tracking-[0.22em] text-black transition-all duration-500 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:rotate-[-3deg] md:text-[58px] xl:text-[64px]">
+          <p className="relative translate-x-[-14px] translate-y-6 rotate-[-8deg] text-[36px] font-semibold tracking-[0.22em] text-black opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:rotate-[-3deg] group-hover:opacity-100 md:text-[58px] xl:text-[64px]">
             {label}
           </p>
 
-          <p className="mt-3 translate-x-[-2px] text-[10px] tracking-[0.18em] text-neutral-700/70 transition-all duration-500 delay-75 group-hover:translate-x-0 md:text-[11px]">
+          <p className="mt-3 translate-x-[-2px] text-[10px] tracking-[0.18em] text-neutral-700/70 opacity-0 transition-all duration-500 delay-75 group-hover:translate-x-0 group-hover:opacity-100 md:text-[11px]">
             {subcopy}
           </p>
         </div>
@@ -89,15 +89,15 @@ function HeroText({ label, subcopy, align }) {
       <>
         {/* PC */}
         <div className="absolute bottom-4 left-1/2 z-10 hidden -translate-x-1/2 md:block md:bottom-6 xl:bottom-7">
-          <p className="absolute left-1/2 top-0 -translate-x-1/2 translate-y-8 text-[36px] font-semibold tracking-[0.22em] text-gray-500/25 transition-all duration-700 group-hover:translate-y-[6px] md:text-[58px] xl:text-[64px]">
+          <p className="absolute left-1/2 top-0 -translate-x-1/2 translate-y-8 text-[36px] font-semibold tracking-[0.22em] text-gray-500/25 opacity-0 transition-all duration-700 group-hover:translate-y-[6px] group-hover:opacity-100 md:text-[58px] xl:text-[64px]">
             {label}
           </p>
 
-          <p className="relative translate-y-6 text-[36px] font-semibold tracking-[0.22em] text-gray-500 transition-all duration-500 group-hover:translate-y-0 md:text-[58px] xl:text-[64px]">
+          <p className="relative translate-y-6 text-[36px] font-semibold tracking-[0.22em] text-gray-500 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 md:text-[58px] xl:text-[64px]">
             {label}
           </p>
 
-          <p className="mt-3 text-center text-[10px] tracking-[0.18em] text-neutral-700/70 transition-all duration-500 delay-75 md:text-[11px]">
+          <p className="mt-3 text-center text-[10px] tracking-[0.18em] text-neutral-700/70 opacity-0 transition-all duration-500 delay-75 group-hover:opacity-100 md:text-[11px]">
             {subcopy}
           </p>
         </div>
@@ -125,15 +125,15 @@ function HeroText({ label, subcopy, align }) {
     <>
       {/* PC */}
       <div className="absolute bottom-4 right-4 z-10 hidden md:block md:bottom-6 md:right-8 xl:bottom-7 xl:right-9">
-        <p className="absolute right-0 top-0 translate-x-[20px] translate-y-8 rotate-[10deg] text-[36px] font-semibold tracking-[0.22em] text-white/25 transition-all duration-700 group-hover:translate-x-[6px] group-hover:translate-y-[6px] md:text-[58px] xl:text-[64px]">
+        <p className="absolute right-0 top-0 translate-x-[20px] translate-y-8 rotate-[10deg] text-[36px] font-semibold tracking-[0.22em] text-white/25 opacity-0 transition-all duration-700 group-hover:translate-x-[6px] group-hover:translate-y-[6px] group-hover:opacity-100 md:text-[58px] xl:text-[64px]">
           {label}
         </p>
 
-        <p className="relative translate-x-[14px] translate-y-6 rotate-[8deg] text-[36px] font-semibold tracking-[0.22em] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)] transition-all duration-500 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:rotate-[3deg] md:text-[58px] xl:text-[64px]">
+        <p className="relative translate-x-[14px] translate-y-6 rotate-[8deg] text-[36px] font-semibold tracking-[0.22em] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)] opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:rotate-[3deg] group-hover:opacity-100 md:text-[58px] xl:text-[64px]">
           {label}
         </p>
 
-        <p className="mt-3 text-right text-[10px] tracking-[0.18em] text-white/80 transition-all duration-500 delay-75 md:text-[11px]">
+        <p className="mt-3 text-right text-[10px] tracking-[0.18em] text-white/80 opacity-0 transition-all duration-500 delay-75 group-hover:opacity-100 md:text-[11px]">
           {subcopy}
         </p>
       </div>
