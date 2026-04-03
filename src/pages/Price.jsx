@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import PageContainer from "../components/PageContainer";
 
-import blackItemImage from "../assets/black-item.png";
-import grayItemImage from "../assets/gray-item.png";
-import whiteItemImage from "../assets/white-item.png";
+const blackItemImage = "/black-item.png";
+const grayItemImage = "/gray-item.png";
+const whiteItemImage = "/white-item.png";
 
 const priceItems = [
   {

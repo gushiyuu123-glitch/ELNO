@@ -1,5 +1,6 @@
 import ColorPage from "./ColorPage";
-import grayImage from "../assets/gray1.png";
+
+const grayImage = "/gray1.png";
 
 function Gray() {
   return (

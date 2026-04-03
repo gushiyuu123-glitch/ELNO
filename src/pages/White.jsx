@@ -1,5 +1,6 @@
 import ColorPage from "./ColorPage";
-import whiteImage from "../assets/white2.png";
+
+const whiteImage = "/white2.png";
 
 function White() {
   return (

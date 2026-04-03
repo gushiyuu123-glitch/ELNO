@@ -1,19 +1,17 @@
 import { Link } from "react-router-dom";
 import HomeHeader from "../components/HomeHeader";
 
-import blackImage from "../assets/black1.png";
-import grayImage from "../assets/gray.png";
-import whiteImage from "../assets/white1.png";
+const blackImage = "/black1.png";
+const grayImage = "/gray.png";
+const whiteImage = "/white1.png";
 
-import blackItemImage from "../assets/black-item.png";
-import grayItemImage from "../assets/gray-item.png";
-import whiteItemImage from "../assets/white-item.png";
+const blackItemImage = "/black-item.png";
+const grayItemImage = "/gray-item.png";
+const whiteItemImage = "/white-item.png";
 
-/* SP用画像を追加 */
-import blackImageSp from "../assets/black1-sp.png";
-import grayImageSp from "../assets/gray-sp1.png";
-import whiteImageSp from "../assets/white1-sp.png";
-
+const blackImageSp = "/black1-sp.png";
+const grayImageSp = "/gray-sp1.png";
+const whiteImageSp = "/white1-sp.png";
 
 const heroItems = [
   {
@@ -107,20 +105,20 @@ function HeroText({ label, subcopy, align }) {
           </p>
         </div>
 
-     <div className="absolute bottom-5 left-1/2 z-10 -translate-x-1/2 text-center md:hidden">
-  <p
-    className="text-[24px] font-semibold tracking-[0.18em] text-gray-600"
-    style={{ WebkitTextStroke: "0.20px rgba(255,255,255,0.60)" }}
-  >
-    {label}
-  </p>
-  <p
-    className="mt-1 text-[9px] tracking-[0.16em] text-neutral-700/72"
-    style={{ WebkitTextStroke: "0.20px rgba(255,255,255,0.72)" }}
-  >
-    {subcopy}
-  </p>
-</div>
+        <div className="absolute bottom-5 left-1/2 z-10 -translate-x-1/2 text-center md:hidden">
+          <p
+            className="text-[24px] font-semibold tracking-[0.18em] text-gray-600"
+            style={{ WebkitTextStroke: "0.20px rgba(255,255,255,0.60)" }}
+          >
+            {label}
+          </p>
+          <p
+            className="mt-1 text-[9px] tracking-[0.16em] text-neutral-700/72"
+            style={{ WebkitTextStroke: "0.20px rgba(255,255,255,0.72)" }}
+          >
+            {subcopy}
+          </p>
+        </div>
       </>
     );
   }
@@ -169,38 +167,26 @@ function HeroColumn({
   return (
     <Link
       to={to}
-      className={`group relative overflow-hidden rounded-[18px] md:h-full md:rounded-none ${entranceClass} h-[24svh] min-h-[180px] max-h-[240px] md:min-h-0 md:max-h-none`}
+      className={`group relative overflow-hidden rounded-[18px] h-[24svh] min-h-[180px] max-h-[240px] md:h-full md:min-h-0 md:max-h-none md:rounded-none ${entranceClass}`}
       aria-label={`${label}の商品ページを見る`}
     >
-      {/* PC model */}
       <img
         src={pcModelImage}
         alt={modelAlt}
         className="absolute inset-0 hidden h-full w-full object-cover transition-all duration-500 group-hover:scale-[1.015] group-hover:opacity-0 md:block"
       />
 
-      {/* PC item */}
       <img
         src={pcItemImage}
         alt={itemAlt}
         className="absolute inset-0 hidden h-full w-full object-cover opacity-0 transition-all duration-500 group-hover:scale-[1.02] group-hover:opacity-100 md:block"
       />
 
-      {/* SP model */}
       <img
         src={spModelImage}
         alt={modelAlt}
         className="absolute inset-0 h-full w-full object-cover md:hidden"
       />
-
-      {/* SP item 使いたくなったら後で有効化できる */}
-      {/* 
-      <img
-        src={spItemImage}
-        alt={itemAlt}
-        className="absolute inset-0 h-full w-full object-cover opacity-0 md:hidden"
-      />
-      */}
 
       <div
         className={`absolute inset-0 hidden bg-black/0 transition-colors duration-500 md:block ${overlayClass}`}

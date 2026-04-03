@@ -1,5 +1,6 @@
 import ColorPage from "./ColorPage";
-import blackImage from "../assets/black2.png";
+
+const blackImage = "/black2.png";
 
 function Black() {
   return (
